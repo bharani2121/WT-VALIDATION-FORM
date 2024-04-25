@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body {
+        background-color: #f8f9fa; /* Light gray background */
+        font-family: Arial, sans-serif;
+    }
+
+    .card {
+        background-color: #f8f9fa; /* Light gray background */
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #495057; /* Dark gray background */
+        color: #ffffff; /* White text */
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        padding: 30px 20px;
+    }
+
+    .form-control {
+        background-color: #ffffff; /* White background */
+        border: 1px solid #ced4da; /* Gray border */
+        border-radius: 8px;
+    }
+
+    .btn-primary {
+        background-color: #495057; /* Dark gray background */
+        border-color: #495057; /* Dark gray border */
+        border-radius: 8px;
+        width: 100%;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #343a40; /* Darker gray background on hover */
+        border-color: #343a40; /* Darker gray border on hover */
+    }
+
+    .error {
+        color: #dc3545; /* Red error text */
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+
+    .form-title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 30px;
+    }
+
+    .form-label {
+        font-weight: bold;
+        color: #495057; /* Dark gray */
+    }
+
+    .custom-checkbox .custom-control-label::before {
+        border: 1px solid #495057; /* Dark gray border for checkboxes */
+    }
+
+    .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+        background-color: #495057; /* Dark gray background for checked checkboxes */
+        border-color: #495057;
+    }
+
+    .custom-checkbox .custom-control-input:focus~.custom-control-label::before {
+        box-shadow: 0 0 0 0.2rem rgba(73, 80, 87, 0.25); /* Dark gray focus shadow */
+    }
+
+    .custom-checkbox .custom-control-input:focus:not(:checked)~.custom-control-label::before {
+        border-color: #adb5bd; /* Light gray border for focused checkboxes */
+    }
+
+    .custom-checkbox .custom-control-input:active:not(:checked)~.custom-control-label::before {
+        background-color: rgba(73, 80, 87, 0.25); /* Light gray background for active checkboxes */
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="form-title mb-4">Registration Form</h2>
+                </div>
+                <div class="card-body">
+                    <form id="registrationForm" class="needs-validation" novalidate>
+                        <div class="form-group">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                            <div class="invalid-feedback error">Please enter your first name</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" required>
+                            <div class="invalid-feedback error">Please enter your last name</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dob" class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control" id="dob" name="dob" required>
+                            <div class="invalid-feedback error">Please select your date of birth</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Gender</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                                <label class="form-check-label" for="male">
+                                    Male
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                <label class="form-check-label" for="female">
+                                    Female
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+                                <label class="form-check-label" for="other">
+                                    Other
+                                </label>
+                            </div>
+                            <div class="invalid-feedback error">Please select your gender</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address" class="form-label">Address</label>
+                            <textarea class="form-control" id="address" name="address" required></textarea>
+                            <div class="invalid-feedback error">Please enter your address</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="course" class="form-label">Course</label>
+                            <select class="form-control" id="course" name="course" required>
+                                <option value="">Select</option>
+                                <option value="CSE">CSE</option>
+                                <option value="IT">IT</option>
+                                <option value="ECE">ECE</option>
+                                <option value="EEE">EEE</option>
+                                <option value="CIVIL">CIVIL</option>
+                                <option value="MECH">MECH</option>
+                            </select>
+                            <div class="invalid-feedback error">Please select your course</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" value="+91" required>
+                            <div class="invalid-feedback error">Please enter your phone number</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                            <div class="invalid-feedback error">Please enter a valid email address</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                            <div class="invalid-feedback error">Please enter a password</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                            <div class="invalid-feedback error">Please confirm your password</div>
+                        </div>
+
+                        <div class="form-group custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="agreeTerms" required>
+                            <label class="custom-control-label" for="agreeTerms">I agree to the <a href="#" class="text-decoration-none">Terms and Conditions</a></label>
+                            <div class="invalid-feedback error">You must agree before submitting</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript functions for form validation
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        if (validateForm()) {
+            this.submit();
+        }
+    });
+
+    function validateForm() {
+        let isValid = true;
+        let fields = ['firstName', 'lastName', 'dob', 'gender', 'address', 'course', 'phoneNumber', 'email', 'password', 'confirmPassword'];
+        let errorMessages = {
+            firstName: 'Please enter your first name',
+            lastName: 'Please enter your last name',
+            dob: 'Please select your date of birth',
+            gender: 'Please select your gender',
+            address: 'Please enter your address',
+            course: 'Please select your course',
+            phoneNumber: 'Please enter your phone number',
+            email: 'Please enter a valid email address',
+            password: 'Please enter a password',
+            confirmPassword: 'Please confirm your password'
+        };
+
+        fields.forEach(function(field) {
+            let input = document.getElementById(field);
+            let error = input.nextElementSibling;
+            if (!input.checkValidity()) {
+                error.textContent = errorMessages[field];
+                isValid = false;
+            } else {
+                error.textContent = '';
+            }
+        });
+
+        // Check if passwords match
+        let password = document.getElementById('password').value;
+        let confirmPassword = document.getElementById('confirmPassword').value;
+        let passwordError = document.getElementById('confirmPassword').nextElementSibling;
+        if (password !== confirmPassword) {
+            passwordError.textContent = 'Passwords do not match';
+            isValid = false;
+        } else {
+            passwordError.textContent = '';
+        }
+
+        // Check if terms are agreed
+        let agreeTerms = document.getElementById('agreeTerms').checked;
+        let termsError = document.getElementById('agreeTerms').nextElementSibling.nextElementSibling;
+        if (!agreeTerms) {
+            termsError.textContent = 'You must agree before submitting';
+            isValid = false;
+        } else {
+            termsError.textContent = '';
+        }
+
+        return isValid;
+    }
+</script>
+
+</body>
+</html>
